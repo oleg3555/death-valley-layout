@@ -1,17 +1,16 @@
-const images = document.querySelectorAll(".section-works-content a");
+const images = document.querySelectorAll(".section-works-content img");
 const popup = document.querySelector('.popup');
-const popupImage = popup.querySelector('.popup-image');
-const worksContent = document.querySelector('.section-works-content');
+const popupImage = popup.querySelector('.popup-image img');
 
 for (let i = 0; i < images.length; i++) {
     const element = images[i];
     element.addEventListener('click', function () {
-        popupImage.appendChild(element);
         popup.classList.add('popup-open');
-        popup.addEventListener('click', function () {
-            popup.classList.remove('popup-open');
-            for (let j = 0; j < images.length; j++) {
-                worksContent.appendChild(images[j]);
+        popupImage.src=element.getAttribute('src');
+        popup.addEventListener('click', function (evt) {
+            if(evt.target!==popupImage) {
+                popup.classList.remove('popup-open');
+                popup.removeEventListener('click',this)
             }
         });
     })
