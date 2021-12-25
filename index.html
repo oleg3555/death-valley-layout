@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-        // Initialize and add the map
-        function initMap() {
-            // The location of Uluru
-            const uluru = {lat: -25.344, lng: 131.036};
-            // The map, centered at Uluru
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 4,
-                center: uluru,
-            });
-            // The marker, positioned at Uluru
-            const marker = new google.maps.Marker({
-                position: uluru,
-                map: map,
-            });
-        }
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Death Valley</title>
@@ -44,11 +27,11 @@
 </header>
 <main class="main-content">
     <section class="about">
-        <div class="main-content__title-block">
-            <div class="main-content__title-text">
+        <div class="title">
+            <div class="title__text">
                 about us
             </div>
-            <div class="main-content__title-description">
+            <div class="title__description">
                 lorem ipsum dolor sit amet event landing template
             </div>
         </div>
@@ -79,11 +62,11 @@
         </div>
     </section>
     <section class="works">
-        <div class="main-content__title-block">
-            <div class="main-content__title-text">
+        <div class="title">
+            <div class="title__text">
                 Featured Works
             </div>
-            <div class="main-content__title-description">
+            <div class="title__description">
                 lorem ipsum dolor sit amet event landing template
             </div>
         </div>
@@ -97,11 +80,11 @@
         </div>
     </section>
     <section class="team">
-        <div class="main-content__title-block">
-            <div class="main-content__title-text">
+        <div class="title">
+            <div class="title__text">
                 Small team
             </div>
-            <div class="main-content__title-description">
+            <div class="title__description">
                 lorem ipsum dolor sit amet event landing template
             </div>
         </div>
@@ -224,8 +207,7 @@
         </div>
     </section>
     <section class="contacts">
-        <a name="contacts"></a>
-        <div class="contacts__content">
+        <div class="contacts__content" id="contacts">
             <form class="contacts__form">
                 <input class="contacts__form-input" type="text" placeholder="Name*" required name="name"/>
                 <input class="contacts__form-input" type="text" placeholder="Subject*" required name="subject"/>
@@ -263,8 +245,8 @@
     </div>
 </footer>
 <div class="popup">
-    <div class="popup-body">
-        <div class="popup-image">
+    <div class="popup__body">
+        <div class="popup__image">
             <img src="" alt="popup-image"/>
         </div>
     </div>
@@ -274,5 +256,22 @@
         async>
 </script>
 <script src="index.js"></script>
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        const uluru = {lat: -25.344, lng: 131.036};
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+        });
+    }
+</script>
 </body>
 </html>
