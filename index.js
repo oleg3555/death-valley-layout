@@ -10,6 +10,7 @@ gallery.addEventListener('click', ({target}) => {
             if (event.target !== popupImage) {
                 popup.classList.remove('popup_open');
                 popup.removeEventListener('click', this)
+                popupImage.removeAttribute('src');
             }
         });
     }
@@ -18,7 +19,10 @@ gallery.addEventListener('click', ({target}) => {
 const form=document.querySelector('.contacts__form');
 form.addEventListener('submit',(event)=>{
     event.preventDefault();
-    document.querySelectorAll('input')
-        .forEach((input) => console.log(`${input.name}: ${input.value}`));
+    form.querySelectorAll('input')
+        .forEach((input) =>{
+            console.log(`${input.name}: ${input.value}`);
+            input.value='';
+        });
 })
 
